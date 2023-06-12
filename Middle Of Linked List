@@ -1,0 +1,16 @@
+Problem link:  https://www.codingninjas.com/codestudio/problems/middle-of-linked-list_8230764?challengeSlug=striver-sde-challenge
+
+Solution:
+public class Solution
+{
+    public static Node findMiddle(Node head)
+    {
+        Node slow = head, fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+        // Write your code here.
+    }
+}
