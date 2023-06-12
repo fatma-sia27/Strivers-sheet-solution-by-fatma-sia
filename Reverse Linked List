@@ -1,0 +1,19 @@
+Problem link: https://www.codingninjas.com/codestudio/problems/reverse-linked-list_8230724?challengeSlug=striver-sde-challenge
+
+Solution:
+public class Solution 
+{
+    public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) 
+    {
+		if(head == null) return null;
+		LinkedListNode curr = head, prev = null, nxt = curr.next;
+		while(curr != null) {
+			curr.next = prev;
+			prev = curr;
+			curr = nxt;
+			if(nxt != null) nxt = nxt.next;
+		}
+		return prev;
+        // Write your code here!
+    }
+}
