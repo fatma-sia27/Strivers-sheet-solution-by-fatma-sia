@@ -1,0 +1,18 @@
+Problem link: https://www.codingninjas.com/codestudio/problems/unique-paths_8230802?challengeSlug=striver-sde-challenge
+
+Solution:
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int uniquePaths(int m, int n) {
+		// Write your code here.
+		int noOfSteps = n+m-2;
+        int noOfStepsDown = m - 1;
+
+        double ans=1;
+        for(int i=1; i<=noOfStepsDown; i++) {
+            ans = ans * (noOfSteps-noOfStepsDown+i)/i;
+        }
+        return (int)ans;
+	}
+}
