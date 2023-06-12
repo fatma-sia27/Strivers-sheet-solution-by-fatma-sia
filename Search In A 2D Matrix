@@ -1,0 +1,17 @@
+Problem link: https://www.codingninjas.com/codestudio/problems/search-in-a-2d-matrix_8230773?challengeSlug=striver-sde-challenge
+
+Solution:
+import java.util.ArrayList;
+public class Solution {
+    static boolean searchMatrix(ArrayList<ArrayList<Integer>> mat, int target) {
+        // Write your code here.
+        int[][] matrix = mat.stream().map(  u  ->  u.stream().mapToInt(i->i).toArray()  ).toArray(int[][]::new);
+        int i = 0, j = matrix[0].length-1;
+        while(i < matrix.length && j >= 0) {
+            if(matrix[i][j] == target) return true;
+            else if(matrix[i][j] < target) i++;
+            else j--;
+        }
+        return false;
+    }
+}
